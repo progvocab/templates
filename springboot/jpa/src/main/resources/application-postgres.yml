@@ -1,0 +1,27 @@
+server:
+  port: ${APPLICATION_PORT:8034}
+spring:
+  application:
+    name: test
+  jackson:
+    default-property-inclusion: NON_NULL
+  jpa:
+    database: postgresql
+    properties :
+      hibernate :
+        temp :
+          use_jdbc_metadata_defaults : false
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DATASOURCE_USER:postgres}
+    password: ${DATASOURCE_PASSWORD:root}
+
+datasource:
+  postgres:
+    validationQuery: select 1
+    maxActive: 25
+    test-on-borrow: true
+    removeAbandoned: true
+    removeAbandonedTimeout: 60
+    logAbandoned: true
+    logValidationErrors: true
