@@ -1,3 +1,3 @@
 # templates
 
-svn checkout https://github.com/progvocab/trunk/templates/springboot
+ svn export https://github.com/progvocab/templates/trunk/springboot/jpa
