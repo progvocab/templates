@@ -8,7 +8,7 @@ var corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-var products = require('./product.controller.js');
+var products = require('./app.controller.js');
 var app = express();
 var finalParagraphInterceptor = interceptor(function(req, res){
   return {
