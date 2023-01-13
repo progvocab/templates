@@ -22,15 +22,15 @@ var finalParagraphInterceptor = interceptor(function(req, res){
        console.log('intercept');
 	//console.log(req.headers);
 	console.log(res);
-	if(req.headers.test == 'test'){
+	//if(req.headers.test == 'test'){
 		send(body);
-		console.log('success');
-	}else{
-		var resp ={ 'resp':  'fail'  };
+		//console.log('success');
+	//}else{
+		//var resp ={ 'resp':  'fail'  };
 		send(resp);
-		console.log('fail');
+		//console.log('fail');
 		//throw "fail";
-	}
+	//}
       
     }
   };
@@ -43,13 +43,13 @@ app.use(function (req, res, next) {
         //var name = req.originalMethod + req.originalUrl;
         //log.trace('Start MetroInfo for route : %s', name);
         //metro.startMetrologie(name);
-        if(req.headers.test == 'test'){
+      //  if(req.headers.test == 'test'){
 			return next();
-		}else{
-			res.send({ 'resp': 'fail' });
-		}
+		//}else{
+		//	res.send({ 'resp': 'fail' });
+		//}
     });
-app.use('/products', products);
+app.use('/app', products);
 
 
 app.listen(8082);
