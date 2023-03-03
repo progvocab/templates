@@ -1,7 +1,7 @@
 SHOW DATABASES;
-USE sql6590431;
+USE progvocab;
 
-CREATE TABLE sql6590431.Persons (
+CREATE TABLE progvocab.Persons (
     PersonID int,
     LastName varchar(255),
     FirstName varchar(255),
@@ -10,9 +10,17 @@ CREATE TABLE sql6590431.Persons (
 );
 
 
-use sql6590431;
+ 
 
-INSERT INTO sql6590431.Persons (PersonID, FirstName, LastName, Address, City )
+INSERT INTO progvocab.Persons (PersonID, FirstName, LastName, Address, City )
 VALUES ('Cardinal', 'Tom B.', 'Erichsen', 'Skagen 21',  'Norway');
 
-select * from sql6590431.Persons;
+select * from progvocab.Persons;
+
+
+delete from progvocab.Persons 
+where personid in ( select personid from progvocab.Persons where personid = '1 )
+                   
+select * from 
+                (   select FirstName, LastName from  progvocab.Persons )
+where FirstName = 'Tom B.'
